@@ -7,7 +7,7 @@
 Title: Pokemon Game<br>
 Type: Lab/HW<br>
 Creator: WDI-Archer, WDI-Funke <br>
-Adapted + Modified by: Jim Haff and Reuben Ayres then adapted Doireann Herold for Python Version<br>
+Adapted + Modified by: Jim Haff and Reuben Ayres then adapted by Doireann Herold for Python Version<br>
 Topics: Using objects, the keyword `self` and methods to create a game while focusing on OOP, array filter<br>
 
 <hr>
