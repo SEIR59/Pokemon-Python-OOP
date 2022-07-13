@@ -23,6 +23,10 @@ def game(deck):
         while isinstance(p_sel, int) == False: 
             
             [print(f"{idx+1} : {card}") for idx, card in enumerate(player['hand'])]
+            
+            #Intentionally leaving this out because it's totally cheating
+            #cHand = [card for card in computer['hand']]
+            #print(f"Computer has {cHand}")
             p_sel = input('Please select your card by typing which number you want to pick.')
 
             try:
