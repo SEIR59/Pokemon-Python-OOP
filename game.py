@@ -21,20 +21,46 @@ def dealCards(cards, p1 , p2):
 
 
 def game_round(p1, p2):
-    p_choice = 'q'
+    player_score = 0
+    computer_score = 0
 
-    while isinstance(p_choice, int) == False: 
+    def player_selection():
+        p_sel = 'q'
+
+        while isinstance(p_sel, int) == False: 
+            
+            [print(f"{idx+1} : {card}") for idx, card in enumerate(player)]
+            p_sel = input('Please select your card by typing which number you want to pick.')
+
+            try:
+                p_sel = int(p_sel)
+                print(f"Your choice was {player[p_sel-1]}.")
+                return p_sel
+            except:
+                p_sel = 'Invalid selection.'
         
-        [print(f"{idx+1} : {card}") for idx, card in enumerate(player)]
-        p_choice = input('Please select your card by typing which number you want to pick.')
+    for i in range(len(player)):
+        player_choice = player.pop(player_selection())
+        auto_choice = auto.pop(random.randint(0,len(auto)-1))
 
-        try:
-            p_choice = int(p_choice)
-            print(f"Your choice was {player[p_choice-1]}.")
-        except:
-            p_choice = 'Invalid selection.'
+        if player_choice['damage'] > auto_choice['damage']:
+            print(f"Player wins! Player chose {player_choice} and computer chose {auto_choice}.")
+            player_score += 1
+        elif player_choice['damage'] == auto_choice['damage']:
+            print('Tie! Player chose {player_choice} and computer chose {auto_choice}.')
+        else:
+            print(f"Player wins! Player chose {player_choice} and computer chose {auto_choice}.")
+            computer_score += 1
+        
+        print(f"Player: {player_score}. Computer: {computer_score}")
     
-    pass
+    if player_score > computer_score:
+        print(f"Player wins the games! Congratulations and good job.")
+    elif player_score == computer_score:
+        print(f"Tie game. Better try again and see who's the better player.")
+    else:
+        print(f"Computer wins! HAHAHAHAHAHAHA this pokemon AI really is unstoppable! You never stood a chance. Git gud scrub. Vida la viva silicio!")
+
 
     
 
