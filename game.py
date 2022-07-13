@@ -87,7 +87,8 @@ def game(deck):
     
     player_wins = 0
     computer_wins = 0
-    currDeck = deck[:]
+    player_deck = deck[:]
+    computer_deck = deck[:]
     player = {
         'hand':[],
         'past':[]
@@ -115,3 +116,4 @@ def game(deck):
 
 #start the game
 game(pokeData)
+
